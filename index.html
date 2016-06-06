@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script src="javascript/angular.js"></script>
+<script src="javascript/angular-route.js"></script>
+<script src="main.js"></script>
+<script src="controller/message.js"></script>
 <script>
     var socket = io('http://localhost:3000');
 </script>
@@ -21,8 +25,8 @@
 </head>
 
 <body>
-<form action="">
-    <input id="m" autocomplete="off" /><button>Send</button>
+<form action="" ng-controller="messageCtrl">
+    <input id="m" autocomplete="off" ng-model="m" /><button ng-click="submit()">Send</button>
 </form>
 
 
